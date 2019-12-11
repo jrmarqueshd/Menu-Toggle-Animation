@@ -1,0 +1,98 @@
+@keyframes activeMenuAnimation {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes activeMenuAnimationFragmentOne {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 30%;
+	}
+}
+
+@keyframes activeMenuAnimationFragmentTwo {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 40%;
+	}
+}
+
+nav ul {
+	background-color: #515151;
+	box-shadow: 0 10px 20px rgba(51, 51, 51, 0.8);
+	color: #fff;
+	display: block;
+	height: 100vh;
+	list-style: none;
+	margin: 0;
+	padding: 25px 0 0;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 30%;
+	min-width: 250px;
+	z-index: 100;
+}
+
+nav #fragmentOne,
+nav #fragmentTwo {
+	background-color: transparent;
+	box-shadow: 0 10px 20px rgba(51, 51, 51, 0.8);
+	content: "";
+	display: block;
+	height: 100vh;
+	position: fixed;
+	left: -100%;
+	top: 0;
+	width: 10%;
+	min-width: 20px;
+	z-index: 99;
+}
+
+nav #fragmentTwo {
+	width: 7%;
+	min-width: 15px;
+	z-index: 98;
+}
+
+nav ul.active {
+	animation: activeMenuAnimation 498.7ms ease-in-out backwards;
+	left: 0;
+}
+
+nav #fragmentOne.active {
+	animation: activeMenuAnimationFragmentOne 498.7ms 698.7ms ease-in-out
+		backwards;
+	background-color: #04539f;
+	left: 30%;
+}
+
+nav #fragmentTwo.active {
+	animation: activeMenuAnimationFragmentTwo 498.7ms 1098.7ms ease-in-out
+		backwards;
+	background-color: #045353;
+	left: 40%;
+}
+
+nav ul li {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px 15px;
+	text-transform: uppercase;
+}
+
+nav button.button-menu {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	font-size: 25px;
+}
